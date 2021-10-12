@@ -1,0 +1,55 @@
+
+
+
+
+
+
+// Reset 
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+// Setting the font size for the webpage
+html {
+    font-size: 62.5%;   // 100/16 = 6,25 
+                        // 1rem = 16px
+
+    @include respond(tab-land) { // width < 1200px?
+        font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%
+    }
+
+    @include respond(tab-port) { // width < 900px?
+        font-size: 50%; // 1rem = 8px, 8/16 = 50%
+    }
+
+    @include respond(phone) { // width < 600px?
+        font-size: 43.75%; // 1rem = 7px, 7/16 = 43.75%
+    }
+
+    @include respond(small-phone) { // width < 500px?
+        font-size: 39%; // 1rem = 6px, 6/16 = 37.5%
+    }
+
+    @include respond(big-desktop) {
+        font-size: 68%; 
+    }
+}
+
+// Setting the website body part
+body {
+    box-sizing: border-box;
+    padding: 3rem; // The white border around the website
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
+}
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
